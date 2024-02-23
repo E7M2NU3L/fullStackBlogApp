@@ -1,0 +1,25 @@
+@media (max-width: 640px) {
+    .aligner{
+        flex-direction: column;
+        height: 100%;
+    }
+    .aligner img {
+        border-radius: 30%;
+        box-shadow: 0 5px 5px 0px rgba(0,0,0,0.5);
+        height: 75%;
+        width: 75%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 640px) {
+    .aligner img {
+        border-radius: 30%;
+        box-shadow: 0 5px 5px 0px rgba(0,0,0,0.5);
+        height: 75%;
+        width: 75%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+}
