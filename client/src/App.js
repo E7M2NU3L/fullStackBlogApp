@@ -6,6 +6,7 @@ import Footer from "./Components/Footer/Footer";
 import Profile from "./Components/Profile/Profile";
 import Home from './Components/Home';
 import NotFound from "./Components/NotFound/NotFound";
+import CreateBlog from "./Components/CreateBlog/CreateBlog";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/api/v1/users/login" element={<Login />}/>
       <Route path="/api/v1/users/register" element={<Register />} />
       <Route path="/api/v1/users/profile" element={<Profile />} />
+      <Route path="/api/v1/users/create-post" element={<CreateBlog />} />
 
       <Route
       path="*"

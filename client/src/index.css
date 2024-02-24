@@ -15,3 +15,15 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+  --bg-gradient: linear-gradient(top top left, #5E3D52, #457CA3, #185D7A);
+  --primary: ##583BBF;
+  --black: ##05070D;
+  --dark-green: ##103740;
+  --light-green: ##03A6A6;
+  --orange: #D93D04;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Limelight&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rowdies:wght@300;400;700&display=swap');
+

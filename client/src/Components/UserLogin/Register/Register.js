@@ -1,54 +1,69 @@
 import { Apple, GitHub, Google } from '@mui/icons-material'
-import React from 'react';
+import React, { useContext, useState } from 'react'
 import axios from 'axios';
-import { useState } from 'react';
+import { authContext } from '../../../apis/Users/AuthContext';
+import './main.css';
 
-const Register = () => {
-    const [userDetails, setUserDetails] = useState({
-        fullname: '',
-        email: '',
-        password: '',
-    });
-    
-    const handleSubmit = async (e) => {
-        e.preventDefault(); // Corrected the typo (preventDefault, not preventDefaults)
-        try {
-        // Send form data to the backend server
-        const response = await axios.post('http://localhost:4000/api/v1/users/register', userDetails);
-        console.log(response);
-        console.log(response.data); // Log the response from the server
-        } catch (error) {
-        console.error('Error submitting form:', error);
-        }
-    };
-    
-    const handleEmail = (e) => {
-        setUserDetails({
-        ...userDetails,
-        email: e.target.value,
-        });
-    };
-    
-    const handlePassword = (e) => {
-        setUserDetails({
-        ...userDetails,
-        password: e.target.value,
-        });
-    };
+const Login = () => {
 
-    const handleFullname = (e) => {
-        setUserDetails({
-            ...userDetails,
-            fullname: e.target.value,
-        })
+    const colorPalettes = {
+        'primary': '#D81630',
+        'secondary': '#D68F87',
+        'lightbg': '#FFE4DE',
+        'hovercolor': '#7FB0E1',
     }
 
+    const className ={
+        black: "bg-[#05070D]",
+        DG: "bg-[#103740]",
+        LG:"bg-[#03A6A6]",
+        LGText: "text-[#03A6A6]",
+        orange: "text-[#D93D04]",
+        purple: "text-[#583BBF]",
+        gradient: "bg-gradient-to-tr from-[#5E3D52] 60%, via-[#457CA3] 10% to-[#185D7A] 30%",
+        gradient2: "bg-gradient-to-tr from-[#05070D] to-[#103740]"
+    }
+
+    // consume the context
+    const {loginUserAction}= useContext(authContext);
+
+        // form Data
+        const [userDetails, setUserDetails] = useState({
+            email: '',
+            password: '',
+        });
+
+        
+        const handleSubmit = async (e) => {
+            e.preventDefault(); // Corrected the typo (preventDefault, not preventDefaults)
+            
+            // dispatch the user
+            loginUserAction(userDetails);
+        };
+        
+        const handleEmail = (e) => {
+            setUserDetails({
+            ...userDetails,
+            [e.target.name] : e.target.value,
+            });
+        };
+        
+        const handlePassword = (e) => {
+            setUserDetails({
+            ...userDetails,
+            [e.target.name]: e.target.value,
+            });
+        };
+    
+    
   return (
-    <div className='min-h-screen h-full w-full flex justify-center items-center bg-gradient-to-br from-[#300a4f] via-[#551979] to-[#7e27a4]'>
-        <div className='bg-gradient-to-tr from-[#fef6df] via-[#eae7c4] to-[#c8d1a2] p-12 border border-1 rounded-lg hover:shadow-lg hover:shadow-[#af40d0]'>
-            <h1 className='underline font-["Roboto", sans-serif] text-[#AF40D0] font-bold text-2xl'>
-                Sign up
+    <div className='min-h-screen h-full w-full flex justify-center items-center bg-gradient-to-tr from-[#05070D] to-[#103740]'>
+        <div className='bg-[#103740] p-12 rounded-lg hover:shadow-md hover:shadow-[#03a6c6] outline-none'>
+            <div className='lol'>
+            <h1 className='underline font-["Roboto", sans-serif] text-[#03A6A6] font-bold text-2xl'>
+                Register
             </h1>
+            </div>
 
             <form onSubmit={handleSubmit}>
                 <div className='flex w-full mt-6 gap-2'>
@@ -69,23 +84,40 @@ const Register = () => {
                     <hr className='flex-grow w-full bg-black border-1 border-blue-900'/>
                 </div>
                 <div className='flex flex-col'>
-                <input type='text' name='fullname' placeholder='Username' value={userDetails.fullname} onChange={handleFullname}  className='mt-2 mx-3 border border-1 border-blue-900 active:border-[#28beb4] rounded-lg flex justify-center text-center items-center py-1'/>
-                </div>
-                <div className='flex flex-col mt-2'>
-                <input type='text' name='email' placeholder='Enter Your Email' value={userDetails.email} onChange={handleEmail} className='mt-2 mx-3 border border-1 border-blue-900 active:border-[#28beb4] rounded-lg flex justify-center text-center items-center py-1'/>
-                </div>
-                <div className='flex flex-col mt-2'>
-                <input type='password' name='password' placeholder='Enter your Password' autoComplete='false' value={userDetails.password} onChange={handlePassword} className='mt-2 mx-3 border border-1 border-blue-900 active:border-[#28beb4] rounded-lg flex justify-center text-center items-center py-1' />
-                </div>
-                <br />
-                <div className='w-full justify-center flex items-center text-center'>
-                <button type='submit' className='w-48 flex border border-none rounded-lg ring-1 hover:ring-[#FFACFF] bg-gradient-to-tr from-[#FFACFF] via-[#AF40D0] to-[#7e27a4] text-[#fefedf] justify-center items-center text-center hover:text-[#28beb4] shadow-lg hover:shadow-lg hover:shadow-[#FFACFF] py-1 font-bold'>
-                    Submit
+                <input
+                type='text'
+                name='email'
+                placeholder='email'
+                className='mt-2 mx-3 border-0 input-el rounded-lg flex justify-center pl-3 items-center py-1 text-[#09c6a6]'
+                value={userDetails.email}
+                onChange={handleEmail} // Changed from onClick to onChange
+                />
+            </div>
+            <br />
+            <div className='flex flex-col'>
+                <input
+                type='password'
+                name='password'
+                placeholder='password'
+                autoComplete='false'
+                className='mt-2 mx-3 border-0 input-el rounded-lg flex justify-center pl-3 items-center py-1 text-[#09c6a6]'
+                value={userDetails.password}
+                onChange={handlePassword} // Changed from onClick to onChange
+                />
+            </div>
+            <br />
+            <div className='w-full justify-center flex items-center text-center'>
+                <button
+                type='submit'
+                className='w-48 flex border border-none rounded-lg bg-[#D93D04] text-[#fefedf] justify-center items-center text-center  shadow-lg hover:shadow-lg  py-1 font-bold'
+                >
+                Submit
                 </button>
-                
-                </div>
+            </div>
+
                 <h4 className='flex flex-col mt-3'>
-                    <a className='text-blue-700 text-0.5xl hover:text-emerald-600 active:text-red-500'>Already Have an Account? Log in</a>
+                    <a className='text-[#28beb4] hover:text-emerald-500 active:text-red-500 text-sm' >Forgot Password?</a>
+                    <a className='text-[#28beb4] text-sm hover:text-emerald-600 active:text-red-500'>Don't Have an Account? Sign up</a>
                 </h4>
             </form>
 
@@ -95,4 +127,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Login

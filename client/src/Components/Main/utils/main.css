@@ -1,0 +1,42 @@
+:root{
+    --bg-gradient: linear-gradient(to top left, #5E3D52, #457CA3, #185D7A);
+    --primary: #583BBF;
+    --black: #05070D;
+    --dark-green: #103740;
+    --light-green: #03A6A6;
+    --orange: #D93D04;
+}
+
+.card{
+    background: rgba(0,0,0,0.6);
+    color: var(--light-green);
+}
+
+.card .card-head{
+    color: var(--dark-green);
+    font-size: 8px;
+}
+
+.card .author{
+    font-size: 12px;
+}
+
+.card .card-head div{
+    color: #aaa;
+    font-size: 6px;
+}
+
+.card .card-date{
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 0.8rem;
+}
+
+.card .card-body{
+    color: var(--light-green);
+    font-size: 12px;
+}
+
+.card .card-links{
+    color: var(--primary);
+}

@@ -2,82 +2,40 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Main.css'
 
-import AI from '../../assets/AI.jpg';
-import Tech from '../../assets/Tech.webp';
-import MEd from '../../assets/MEd.jpg';
+
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Cards from './utils/Cards';
 
 const Main = () => {
+  const className ={
+    black: "bg-[#05070D]",
+    DG: "bg-[#103740]",
+    LG:"bg-[#03A6A6]",
+    LGText: "text-[#03A6A6]",
+    orange: "text-[#D93D04]",
+    purple: "text-[#583BBF]",
+    gradient: "bg-gradient-to-tr from-[#5E3D52] 60%, via-[#457CA3] 10% to-[#185D7A] 30%",
+    gradient2: "bg-gradient-to-tr from-[#05070D] to-[#103740]"
+  }
   return (
-    <div className='h-full' id='sec'>
+    <main className='bg-[#05070D]'>
+    
+      <h1 className='text-4xl font-bold text-[#03A6C6] font-["Anton", sans-serif] ml-8 '>
+        <span className='text-[#583BBf]'>Toasts</span> for you
+      </h1>
+      <div className='h-full bg-gradient-to-br from-[#05070D] to-[#103740]' id='sec'>
+      <Cards />
 
-      <div className=''>
-        <div className='flex flex-wrap gap-4 justify-evenly items-center'>
-          <div className='border px-4 py-2 shadow-md hover:shadow-lg hover:shadow-purple-800 bg-slate-200 border-1 ring-1 ring-purple-300 hover:ring-purple-500 rounded-lg '>
-            <img
-            src={AI}
-            alt=''
-            id="img"
-            className='rounded-lg img-sm mb-4 '
-            />
-            <h1 className='text-2xl font-bold text-slate-700 mb-2'>
-              Generative AI in Medicine
-            </h1>
-            <h3 className='font-semibold text-md'>
-            as we navigate through the ever-evolving landscape of the medical field, exploring how AI is reshaping diagnostics, treatment strategies, and the future of healthcare. Embrace the future with us, where cutting-edge insights and transformative ideas come together to pave the way for a healthier tomorrow.
-            </h3>
-            <blockquote>
-              3 Mins Read
-            </blockquote>
-            <Link to='/api/v1/posts/:id' className='hover:text-blue-500'>
-              Read More
-            </Link>
-          </div>
-          
-          <div className='border px-4 py-2 shadow-md hover:shadow-lg hover:shadow-purple-800 bg-slate-200 border-1 ring-1 ring-purple-300 hover:ring-purple-500 rounded-lg'>
-            <img
-            src={MEd}
-            alt=''
-            id="img"
-            className=' rounded-lg img-sm mb-4'
-            />
-            <h1 className='text-2xl font-bold text-slate-700 mb-2'>
-              Generative AI in Medicine
-            </h1>
-            <h3 className='font-semibold text-md'>
-            where we embark on an insightful journey at the intersection of medicine and artificial intelligence (AI). In this space, we delve into the dynamic realm where technological innovation and healthcare converge, unlocking a treasure trove of knowledge and groundbreaking discoveries. From the latest advancements in medical AI to the transformative impact on patient care, our blog serves as your compass through the intricate landscape of this symbiotic relationship
-            </h3>
-            <blockquote>
-              3 Mins Read
-            </blockquote>
-            <Link to='/api/v1/posts/:id' className='hover:text-blue-500'>
-              Read More
-            </Link>
-          </div>
-
-          <div className='border px-4 py-2 shadow-md hover:shadow-lg hover:shadow-purple-800 bg-slate-200 border-1 ring-1 ring-purple-300 hover:ring-purple-500 rounded-lg'>
-            <img
-            src={Tech}
-            alt=''
-            id="img"
-            className='rounded-lg img-sm mb-4 '
-            />
-            <h1 className='text-2xl font-bold text-slate-700 mb-2'>
-              Generative AI in Medicine
-            </h1>
-            <h3 className='font-semibold text-md'>
-            where we embark on an insightful journey at the intersection of medicine and artificial intelligence (AI). In this space, we delve into the dynamic realm where technological innovation and healthcare converge, unlocking a treasure trove of knowledge and groundbreaking discoveries. From the latest advancements in medical AI to the transformative impact on patient care, our blog serves as your compass through the intricate landscape of this symbiotic relationship
-            </h3>
-            <blockquote>
-              3 Mins Read
-            </blockquote>
-            <Link to='/api/v1/posts/:id' className='hover:text-blue-500'>
-              Read More
-            </Link>
-          </div>
-        </div>
-      </div>
-
+      <Stack spacing={2} className='w-full h-full flex justify-center items-center mt-8 text-[#03A6C6]'>
+        <Pagination count={11} className='text-[#03A6A6]' defaultPage={6} boundaryCount={2} />
+      </Stack>
     </div>
+    </main>
+    
   )
 }
 

@@ -12,13 +12,24 @@ import { LinkedIn } from '@mui/icons-material';
 import { Instagram } from '@mui/icons-material';
 
 const Footer = () => {
-  return (
-    <div className=' flex flex-col flex-wrap text-wrap justify-center items-center bg-slate-700 text-[#fefedf]'>
+    const className ={
+    black: "bg-[#05070D]",
+    DG: "bg-[#103740]",
+    LG:"bg-[#03A6A6]",
+    LGText: "text-[#03A6A6]",
+    orange: "text-[#D93D04]",
+    purple: "text-[#583BBF]",
+    gradient: "bg-gradient-to-tr from-[#5E3D52] 60%, via-[#457CA3] 10% to-[#185D7A] 30%",
+    gradient2: "bg-gradient-to-tr from-[#05070D] to-[#103740]"
+    }
+  
+    return (
+    <div className=' flex flex-col flex-wrap text-[#03A6A6] bg-[#05070D] text-wrap justify-center items-center '>
         <div className='mx-auto max-w-2xl'>
-        <h2 className='mt-5 text-3xl text-center flex font-["Roboto", sans-serif] italic shadow-sm  mb-4'>
+        <h2 className='mt-5 text-3xl text-center flex font-["Roboto", sans-serif]  shadow-sm  mb-4'>
             JEHR-BLOGS
         </h2>
-        <p className='text-xl max-w-xl min-w-.5xl mx-auto font-["Roboto", sans-serif] overflow-hidden flex flex-wrap'>
+        <p className='text-md max-w-xl min-w-.5xl mx-auto font-["Roboto", sans-serif] overflow-hidden flex flex-wrap ml-4 text-[#aaa]'>
             Made for biomedical Enginneers and AI Enthusisats
         </p>
         <div className='flex justify-center items-center gap-1'>
@@ -83,9 +94,9 @@ const Footer = () => {
             </div>
 
             <div className='flex flex-col justify-center items-center text-center'>
-            <h2 className='text-xl font-["poppins", sans-serif] text-[#fefedf] hover:shadow-lg hover:animate-none mt-3'>Connect With us</h2>
+            <h2 className='text-xl font-["poppins", sans-serif] text-[#aaa] hover:shadow-lg hover:animate-none mt-3'>Connect With us</h2>
             <button className='justify-end flex'>
-            <a href='/api/v1/admin/admin-conect' className='text-center mt-2 hover:text-[#28bebf] hover:shadow-sm hover:shadow-emerald-500 hover:animate-pulse'>Connect</a>
+            <a href='/api/v1/admin/admin-conect' className='text-center mt-2 hover:text-[#28bebf] hover:shadow-sm text-[#aaa] hover:shadow-emerald-500 hover:animate-pulse'>Connect</a>
             </button>
         </div>
         </div>
@@ -103,7 +114,7 @@ const Footer = () => {
         </div>
 
         <div className='mt-3 mb-8'>
-            <h3 className='text-2xl font-bold text-center items-center mb-3'>
+            <h3 className='text-2xl font-bold text-center text-[#aaa] items-center mb-3'>
                 More Services from us
             </h3>
             <div className='flex justify-around gap-3'>

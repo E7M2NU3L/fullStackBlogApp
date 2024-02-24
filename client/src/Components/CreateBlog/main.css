@@ -1,0 +1,75 @@
+:root{
+    --bg-gradient: linear-gradient(to top left, #5E3D52, #457CA3, #185D7A);
+    --primary: ##583BBF;
+    --black: #05070D;
+    --dark-green: #103740;
+    --light-green: #03A6A6;
+    --orange: #D93D04;
+    --grad: linear-gradient(to bottom left, #05070D, #103740);
+}
+
+.post-page{
+    background: var(--grad);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-page form {
+    margin: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 30px 15px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+
+.post-page form .span-el{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.post-page .title{
+    font-family: "Roboto", Arial;
+    margin-left: 5px;
+    color: #03A6A6;
+    margin: 1rem;
+}
+
+#thumbnail{
+    display: none;
+}
+
+.post-page form input {
+    background: none;
+    outline: none;
+    border-bottom: 2px solid #457CA3;
+    color: #03A6A6;
+    font-family: "Roboto", sans-serif;
+}
+
+.post-page form input::placeholder{
+    padding-bottom: 5px;
+    font-size: 12px;
+    font-family: "Anton", sans-serif;
+    color: #457CA3;
+    padding-left: 8px;
+}
+
+.post-page .Post-Create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #D93D04;
+    color: #fefedf;
+    padding: 0 5px;
+    font-family: "Anton", sans-serif;
+    font-size: 18px;    
+}
+
+.post-page .holder{
+    color: #185D7A;
+}

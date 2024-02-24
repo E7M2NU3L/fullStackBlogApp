@@ -1,28 +1,12 @@
 :root{
-    --primary-color: #AF40D0;
-    --secondary-color: #FFACFF;
-    --lightbg-color: #FEFEDF;
-    --hover-color: #28BEB4;
-
-    --dark-primary-color: #590074;
-    --dark-secondary-color: #785582;
-    --dark-bg-color: #FFE8FF;
-    --dark-hover-color: #5ebab1;
-
-    --gradient-hover-three:  linear-gradient(to right top, #28beb4, #2ab0a7, #2aa399, #2b968d, #2a8980, #288178, #267871, #247069, #216a64, #1f655e, #1c5f59, #1a5a54);
-
-    --gradient-primary-three: linear-gradient(to right top, #300a4f, #421164, #551979, #69208e, #7e27a4);
-
-    --gradient-light-three: linear-gradient(to right top, #fef6df, #f5efd1, #eae7c4, #dfe1b8, #d2daac, #cdd6a7, #c8d1a2, #c3cd9d, #c5ca9c, #c7c69c, #c8c39c, #c8c09d);
-
-    --gradient-primary-two:  linear-gradient(to right top, #300a4f, #421164, #551979, #69208e, #7e27a4);
-
+    --bg-gradient: linear-gradient(top top left, #5E3D52, #457CA3, #185D7A);
+    --primary: ##583BBF;
+    --black: #05070D;
+    --dark-green: #103740;
+    --light-green: ##03A6A6;
+    --orange: #D93D04;
 }
 
-nav{
-    background: #AF40D0;
-    height: 60px;    
-}
 
 .BarsIcon{
     display: none;
@@ -48,3 +32,7 @@ nav{
     }
 }
 
+
+.nav-bar{
+    background: linear-gradient(to top left, #05070D, #103740);
+}

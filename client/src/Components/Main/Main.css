@@ -5,6 +5,15 @@
     font-family: "Poppins", sans-serif;
 }
 
+:root{
+    --bg-gradient: linear-gradient(top top left, #5E3D52, #457CA3, #185D7A);
+    --primary: ##583BBF;
+    --black: ##05070D;
+    --dark-green: ##103740;
+    --light-green: ##03A6A6;
+    --orange: #D93D04;
+}
+
 .parallax{
     position: relative;
     width: 100%;
