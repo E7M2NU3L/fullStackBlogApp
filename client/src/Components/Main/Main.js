@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Main.css'
-
-
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Cards from './utils/Cards';
+import { styled } from '@mui/material';
 
 const Main = () => {
   const className ={
@@ -21,6 +20,14 @@ const Main = () => {
     gradient: "bg-gradient-to-tr from-[#5E3D52] 60%, via-[#457CA3] 10% to-[#185D7A] 30%",
     gradient2: "bg-gradient-to-tr from-[#05070D] to-[#103740]"
   }
+
+  const StyledPagination = (styled)({
+    color: "#03A6A6"
+  });
+  const StyledStack = (styled)({
+    color: "#03A6A6"
+  });
+  
   return (
     <main className='bg-[#05070D]'>
     
@@ -31,7 +38,13 @@ const Main = () => {
       <Cards />
 
       <Stack spacing={2} className='w-full h-full flex justify-center items-center mt-8 text-[#03A6C6]'>
-        <Pagination count={11} className='text-[#03A6A6]' defaultPage={6} boundaryCount={2} />
+        <Pagination count={11} className='' defaultPage={6} boundaryCount={2} sx={{
+          color: "#03A6A6",
+          '&.Mui-selected': {
+            color: "#03A6A6"
+          }
+          
+        }} />
       </Stack>
     </div>
     </main>

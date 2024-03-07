@@ -10,7 +10,7 @@ const Profile = () => {
 
     useEffect(() => {
         fetchProfileAction();
-    },[])
+    },[]) 
 
     console.log(profile);
     console.log(error);
@@ -32,17 +32,16 @@ const Profile = () => {
   return (
     <div className='h-full bg-gradient-to-tr from-[#05070D] to-[#103740]'>
         <Details />
-    <hr
-    className='w-40 mx-auto h-1 shadow-md mt-4 mb-4 bg-slate-900' 
-    />
-
-    <Posts />
-
-            <hr
-    className='w-40 mx-auto h-1 shadow-md mt-4 mb-4 bg-slate-900' 
-    />
-
-    <Comments />
+        <hr
+        className='w-40 mx-auto h-1 shadow-md mt-4 mb-4 bg-slate-900' 
+        />
+        <main className='w-full h-full pb-5 pt-5 flex justify-center items-center'>
+          <Posts />
+        </main>
+        <hr
+        className='w-40 mx-auto h-1 shadow-md mt-4 mb-4 bg-slate-900' 
+        />
+        <Comments />
     </div>
   )
 }

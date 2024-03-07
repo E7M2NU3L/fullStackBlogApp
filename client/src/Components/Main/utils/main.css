@@ -36,7 +36,3 @@
     color: var(--light-green);
     font-size: 12px;
 }
-
-.card .card-links{
-    color: var(--primary);
-}

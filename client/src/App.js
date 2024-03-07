@@ -10,7 +10,7 @@ import CreateBlog from "./Components/CreateBlog/CreateBlog";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />

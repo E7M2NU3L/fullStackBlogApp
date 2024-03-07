@@ -1,6 +1,5 @@
 import { Apple, GitHub, Google } from '@mui/icons-material'
 import React, { useContext, useState } from 'react'
-import axios from 'axios';
 import { authContext } from '../../../apis/Users/AuthContext';
 import './main.css';
 

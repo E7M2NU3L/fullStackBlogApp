@@ -1,8 +1,23 @@
 :root{
-    --bg-gradient: linear-gradient(top top left, #5E3D52, #457CA3, #185D7A);
-    --primary: ##583BBF;
-    --black: ##05070D;
-    --dark-green: ##103740;
-    --light-green: ##03A6A6;
+    --bg-gradient: linear-gradient(to top left, #5E3D52, #457CA3, #185D7A);
+    --primary: #583BBF;
+    --black:#05070D;
+    --dark-green: #103740;
+    --light-green: #03A6A6;
     --orange: #D93D04;
+  }
+
+  .head-prof{
+    color: #03A6A6;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .align-prof{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    } 
   }

@@ -20,7 +20,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 // deploy the project
@@ -32,7 +32,7 @@ const deployProject = "firebase deploy";
 const db = getFirestore();
 
 // get the collection
-const userData = collection(db, 'userData');
+export const userData = collection(db, 'userData');
 
 // getting the Data from the collection
 getDocs(userData).then((data) => {

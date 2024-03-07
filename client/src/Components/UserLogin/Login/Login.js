@@ -1,11 +1,13 @@
 import { Apple, GitHub, Google } from '@mui/icons-material'
 import React, { useContext, useState } from 'react'
-import axios from 'axios';
 import { authContext } from '../../../apis/Users/AuthContext';
 import './main.css';
+import { app } from '../../../config/firebaseConfig';
+import {Auth, createUserWithEmailAndPassword, signInWithPopup} from 'firebase/auth';
 
 const Login = () => {
 
+    
     const colorPalettes = {
         'primary': '#D81630',
         'secondary': '#D68F87',
@@ -88,7 +90,7 @@ const Login = () => {
                 type='text'
                 name='email'
                 placeholder='email'
-                className='mt-2 mx-3 border-0 input-el rounded-lg flex justify-center pl-3 items-center py-1 text-[#09c6a6]'
+                className='mt-2 mx-3 border-0 input-el rounded-lg flex justify-center pl-3 items-center py-1 text-[#09c6a6] hover:outline-none outline-none'
                 value={userDetails.email}
                 onChange={handleEmail} // Changed from onClick to onChange
                 />
@@ -100,7 +102,7 @@ const Login = () => {
                 name='password'
                 placeholder='password'
                 autoComplete='false'
-                className='mt-2 mx-3 border-0 input-el rounded-lg flex justify-center pl-3 items-center py-1 text-[#09c6a6]'
+                className='mt-2 mx-3 border-0 input-el rounded-lg flex justify-center pl-3 items-center py-1 text-[#09c6a6] outline-none hover:outline-none'
                 value={userDetails.password}
                 onChange={handlePassword} // Changed from onClick to onChange
                 />
