@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../assets/Designer (6).png'
 import { Link } from 'react-router-dom';
 
