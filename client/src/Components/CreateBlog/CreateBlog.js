@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { storage } from '../../config/firebaseConfig';
-import {ref, uploadBytes} from 'firebase/storage'
-import {v4} from 'uuid';
 import './main.css';
-import { GifBox, PinDropRounded, PlayArrow } from '@mui/icons-material';
+import { GifBox, PlayArrow } from '@mui/icons-material';
 
 const CreateBlog = () => {
 
@@ -38,17 +35,11 @@ const CreateBlog = () => {
             return ;
         }
         else{
-            const imageRef = ref(storage, `images/${fileinput + v4()}`);
-            uploadBytes(imageRef, fileinput).then(() => {
-                console.log("file uploaded successfully");
-            }).catch((err) => {
-                console.log(err?.message);
-            })
+            return ;
         }
     }
 
     
-
     // modules information
     const modules = {
         toolbar: [
