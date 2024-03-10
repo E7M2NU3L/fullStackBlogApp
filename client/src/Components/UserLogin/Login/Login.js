@@ -1,9 +1,6 @@
 import { Apple, GitHub, Google } from '@mui/icons-material'
 import React, { useContext, useState } from 'react'
-import { authContext } from '../../../apis/Users/AuthContext';
 import './main.css';
-import { app } from '../../../config/firebaseConfig';
-import {Auth, createUserWithEmailAndPassword, signInWithPopup} from 'firebase/auth';
 
 const Login = () => {
 
@@ -26,9 +23,6 @@ const Login = () => {
         gradient2: "bg-gradient-to-tr from-[#05070D] to-[#103740]"
     }
 
-    // consume the context
-    const {loginUserAction}= useContext(authContext);
-
         // form Data
         const [userDetails, setUserDetails] = useState({
             email: '',
@@ -39,8 +33,6 @@ const Login = () => {
         const handleSubmit = async (e) => {
             e.preventDefault(); // Corrected the typo (preventDefault, not preventDefaults)
             
-            // dispatch the user
-            loginUserAction(userDetails);
         };
         
         const handleEmail = (e) => {

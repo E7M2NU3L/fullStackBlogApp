@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import Logo from '../../assets/Designer (6).png'
 import { Link } from 'react-router-dom';
+import Protected from '../../pages/Protected';
 
 const Navbar = () => {
   const colorPalettes = {
@@ -36,35 +37,31 @@ const Navbar = () => {
 return (
   <div className='nav-bar shadow-sm shadow-[#3b4856]'>
   <div className='max-w-7xl mx-auto flex flex-wrap justify-between items-center p-2 text-center'>
+    
     <div>
-      <Link to="/">
-      <img 
-      src={Logo}
-      alt='logo image'
-      className='w-12 h-12 rounded-full border' />
+      <Link to="/" className='flex items-center gap-3'>
+        <img 
+        src={Logo}
+        alt='logo image'
+        className='w-12 h-12 rounded-full border' />
+        <p className='text-[#03a6a6] text-sm font-["Poppins", sans-serif] font-semibold'>
+            JEHR-BLOGS
+        </p>
       </Link>
-      </div>
+    </div>
+
 
     <div className='items-center'>
       
-      {true ? 
-
-      <>
-      <ul className='flex justify-evenly items-center gap-2 text-[#03A6A6] mr-4'>
-        <li><Link to='/api/v1/users/login'   className='hover:text-[#D93D04]' >Login</Link></li>
-        <li><Link to='/api/v1/users/register'className='hover:text-[#D93D04]'   >Signup</Link></li>
-      </ul>
-      </>
-
-      : 
       
-      <>
-      <ul>
-      <li><Link to='/api/v1/users/profile' className='hover:text-[#2CBBA3]'  >Profile</Link></li>
-      <li className='hidden sm:block'><Link to='/api/v1/users/logout'  className='hover:text-[#583BBF]' >Logout</Link></li>
+
+      <ul className='flex justify-evenly items-center gap-5 text-[#03A6A6] mr-4'>
+        <li className='hover:translate-x-1 hover:shadow-md transition-shadow shadow-md'><Link to='/api/v1/users/login'   className='' >Login</Link></li>
+        <li className='hover:translate-x-1 hover:shadow-md transition-shadow shadow-md'><Link to='/api/v1/users/register'className=''   >Signup</Link></li>
+        <li className='hover:translate-x-1 hover:shadow-md transition-shadow shadow-md'><Link to='/api/v1/users/profile' className=''>Profile</Link></li>
+        <li className='hidden sm:block'><Link to='/api/v1/users/logout'  className='hover:translate-y-1 transition-shadow shadow-md' >Logout</Link></li>
       </ul>
-      </>
-}
+      
     </div>
   </div>
   </div>
