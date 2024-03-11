@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import Logo from '../../assets/Designer (6).png'
 import { Link } from 'react-router-dom';
-import Protected from '../../pages/Protected';
+import { UseDispatch, useDispatch } from 'react-redux';
+import authService from '../../appwrite_con/Auth.js';
+import {logout} from '../../deb/authSlice.js';
 
 const Navbar = () => {
   const colorPalettes = {
@@ -34,6 +36,16 @@ const Navbar = () => {
     gradient2: "bg-gradient-to-tr from-[#05070D] to-[#103740]"
   }
 
+  // dispatch
+  const dispatch = useDispatch();
+
+  // handling the logout event
+  const logoutHandler = () => {
+    authService.logout().then(()  => {
+      dispatch(logout());
+    })
+  }
+
 return (
   <div className='nav-bar shadow-sm shadow-[#3b4856]'>
   <div className='max-w-7xl mx-auto flex flex-wrap justify-between items-center p-2 text-center'>
@@ -59,7 +71,7 @@ return (
         <li className='hover:translate-x-1 hover:shadow-md transition-shadow shadow-md'><Link to='/api/v1/users/login'   className='' >Login</Link></li>
         <li className='hover:translate-x-1 hover:shadow-md transition-shadow shadow-md'><Link to='/api/v1/users/register'className=''   >Signup</Link></li>
         <li className='hover:translate-x-1 hover:shadow-md transition-shadow shadow-md'><Link to='/api/v1/users/profile' className=''>Profile</Link></li>
-        <li className='hidden sm:block'><Link to='/api/v1/users/logout'  className='hover:translate-y-1 transition-shadow shadow-md' >Logout</Link></li>
+        <li className='hidden sm:block'><Link to='/api/v1/users/logout'  className='hover:translate-y-1 transition-shadow shadow-md' onClick={logoutHandler}>Logout</Link></li>
       </ul>
       
     </div>

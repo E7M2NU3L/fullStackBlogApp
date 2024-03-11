@@ -1,0 +1,25 @@
+:root{
+    --bg-gradient: linear-gradient(to top left, #5E3D52, #457CA3, #185D7A);
+    --primary: ##583BBF;
+    --black: #05070D;
+    --dark-green: #103740;
+    --light-green: #03A6A6;
+    --orange: #D93D04;
+    --grad: linear-gradient(to bottom left, #05070D, #103740);
+}
+
+.page{
+    background-image: var(--grad);
+    color: #03A6A6;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.page .blog-post-container .blog-post .blog-post-image img{
+    max-width: 400px;
+    max-height: 400px;
+
+    margin: 0 auto;
+    box-shadow: 0 5px 5px 0px var(--dark-green);
+    border-radius: 5px;
+}

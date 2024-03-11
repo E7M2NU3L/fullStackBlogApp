@@ -29,9 +29,15 @@ function App() {
         <Profile />
       </Protected>} />
       
-      <Route path="/api/v1/users/create-post" element={<Protected authentication={true}>
+      <Route path="/api/v2/users/create-post" element={<Protected authentication={true}>
         <CreateBlog />
       </Protected>} />
+
+      <Route path="/api/v1/users/create-post" element={
+        <CreateBlog />
+      } />
+
+      <Route path="/api/v1/users/blogs/blog-1" element={<Blog />} />
 
       <Route path="/api/v1/users/posts/:id" element={
         <Protected authentication={true}>
