@@ -111,7 +111,7 @@ const Login = () => {
 
                 <h4 className='flex flex-col mt-3'>
                     <a className='text-[#28beb4] hover:text-emerald-500 active:text-red-500 text-sm' >Forgot Password?</a>
-                    <a className='text-[#28beb4] text-sm hover:text-emerald-600 active:text-red-500'>Don't Have an Account? Sign up</a>
+                    <a className='text-[#28beb4] text-sm hover:text-emerald-600 active:text-red-500'>Dont Have an Account? Sign up</a>
                 </h4>
             </form>
 
